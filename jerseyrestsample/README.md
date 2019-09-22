@@ -1,0 +1,1 @@
+## Example of REST service using Jersey and Spring5

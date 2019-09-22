@@ -1,0 +1,61 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.ecollado.samples:swagger-sample:war:1.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ com.ecollado.samples:swagger-sample:[unknown-version], /store/dev/samples/javathings/swaggersample/pom.xml, line 150, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ----------------< com.ecollado.samples:swagger-sample >-----------------
+[INFO] Building swagger-sample 1.0-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ swagger-sample ---
+[INFO] Deleting /store/dev/samples/javathings/swaggersample/target
+[INFO] 
+[INFO] --- swagger-codegen-maven-plugin:2.3.1:generate (default) @ swagger-sample ---
+[INFO] reading from /store/dev/samples/javathings/swaggersample/src/main/resources/filestorageservice.yaml
+[WARNING] Output directory does not exist, or is inaccessible. No file (.swagger-codegen-ignore) will be evaluated.
+[INFO] Set base package to invoker package (com.ecollado.samples.openapi.invoker)
+[INFO] writing file /store/dev/samples/javathings/swaggersample/target/generated-sources/swagger/src/main/java/com/ecollado/samples/openapi/model/FileInfo.java
+[INFO] writing file /store/dev/samples/javathings/swaggersample/target/generated-sources/swagger/src/main/java/com/ecollado/samples/openapi/model/FileList.java
+[INFO] writing file /store/dev/samples/javathings/swaggersample/target/generated-sources/swagger/src/main/java/com/ecollado/samples/openapi/api/FilesApiController.java
+[INFO] writing file /store/dev/samples/javathings/swaggersample/target/generated-sources/swagger/src/main/java/com/ecollado/samples/openapi/api/FilesApi.java
+[INFO] writing file /store/dev/samples/javathings/swaggersample/target/generated-sources/swagger/src/main/java/com/ecollado/samples/openapi/api/FilesApiDelegate.java
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ swagger-sample ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ swagger-sample ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 6 source files to /store/dev/samples/javathings/swaggersample/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /store/dev/samples/javathings/swaggersample/src/main/java/com/ecollado/samples/openapi/api/FilesApiDelegateImpl.java:[13,42] cannot find symbol
+  symbol:   class InvalidDefinitionException
+  location: package com.fasterxml.jackson.databind.exc
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.390 s
+[INFO] Finished at: 2018-10-21T09:05:04Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project swagger-sample: Compilation failure
+[ERROR] /store/dev/samples/javathings/swaggersample/src/main/java/com/ecollado/samples/openapi/api/FilesApiDelegateImpl.java:[13,42] cannot find symbol
+[ERROR]   symbol:   class InvalidDefinitionException
+[ERROR]   location: package com.fasterxml.jackson.databind.exc
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

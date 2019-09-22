@@ -1,0 +1,151 @@
+swagger: "2.0"
+info:
+  description: "Global Description"
+  version: "1.0.0"
+  title: "Swagger File Storage Service"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "esteban.collado@myemail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+basePath: "/rest"
+tags:
+- name: "files"
+  description: "Access to files"
+- name: "user"
+  description: "Operations about user"
+schemes:
+- "http"
+paths:
+  /files:
+    post:
+      tags:
+      - "fileResource"
+      summary: "Add a new file"
+      description: ""
+      operationId: "addFile"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "File content and meta information to be added"
+        required: true
+        schema:
+          $ref: "#/definitions/FileList"
+      responses:
+        405:
+          description: "Invalid input"
+    get:
+      tags:
+      - "fileResource"
+      summary: "Download File content and meta information"
+      description: "Multiple status values can be provided with comma separated strings"
+      operationId: "getFile"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "fileId"
+        in: "query"
+        description: "Status values that need to be considered for filter"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/FileList"
+        400:
+          description: "Invalid status value"
+  /files/{fileid}:
+    get:
+      tags:
+      - "fileResource"
+      summary: "Download a file by fileId"
+      description: "Download a file given the file identifies"
+      operationId: "getFileById"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "fileId"
+        in: "query"
+        description: "File id"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/FileInfo"
+        400:
+          description: "Invalid status value"
+    put:
+      tags:
+      - "fileResource"
+      summary: "update a file"
+      description: ""
+      operationId: "updateFileById"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "File content and meta information to be added"
+        required: true
+        schema:
+          $ref: "#/definitions/FileList"
+      responses:
+        405:
+          description: "Invalid input"
+    delete:
+      tags:
+      - "fileResource"
+      summary: "Delete a file by fileId"
+      description: "Delete a file given the file identifies"
+      operationId: "deleteFileById"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "fileId"
+        in: "query"
+        description: "File id"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/FileInfo"
+        400:
+          description: "Invalid status value"
+
+definitions:
+  FileList:
+    type: "array"
+    items:
+      "$ref": "#/definitions/FileInfo"
+  FileInfo:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      description:
+        type: "string"
+      content:
+        type: "string"

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ecollado.samples</groupId>
+    <artifactId>java-things</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>openapi-sample</module>
+        <module>jerseyrestsample</module>
+        <module>rabbitmqsample</module>
+        <module>cassandrasample</module>
+        <module>springrabbitmqsample</module>
+        <module>soapsample</module>
+        <module>vertx-sample</module>
+    </modules>
+
+    <dependencies>
+
+    </dependencies>
+
+</project>

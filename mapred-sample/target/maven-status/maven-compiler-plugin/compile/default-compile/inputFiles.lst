@@ -1,0 +1,6 @@
+/home/poncos/dev/samples/javathings/mapred/src/main/java/com/ecollado/samples/mapred/SkipLinesRecordReader.java
+/home/poncos/dev/samples/javathings/mapred/src/main/java/com/ecollado/samples/mapred/SkipLinesInputFormat.java
+/home/poncos/dev/samples/javathings/mapred/src/main/java/com/ecollado/samples/mapred/samples/ProcessUnits.java
+/home/poncos/dev/samples/javathings/mapred/src/main/java/com/ecollado/samples/mapred/samples/WordCount2.java
+/home/poncos/dev/samples/javathings/mapred/src/main/java/com/ecollado/samples/mapred/samples/WordCount.java
+/home/poncos/dev/samples/javathings/mapred/src/main/java/com/ecollado/samples/mapred/KmerCounterProcess.java

@@ -1,0 +1,8 @@
+
+
+database.pg.port=5432
+database.pg.hsot=localhost
+database.pg.dbname=eir
+database.pg.user=testuser
+database.pg.pwd=testpwd
+database.pg.max-pool-size=4

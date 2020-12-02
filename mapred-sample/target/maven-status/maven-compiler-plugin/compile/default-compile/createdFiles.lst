@@ -1,0 +1,15 @@
+com/ecollado/samples/mapred/samples/WordCount$IntSumReducer.class
+com/ecollado/samples/mapred/samples/WordCount2$TokenizerMapper.class
+com/ecollado/samples/mapred/samples/ProcessUnits$E_EReduce.class
+com/ecollado/samples/mapred/samples/WordCount2$TokenizerMapper$CountersEnum.class
+com/ecollado/samples/mapred/KmerCounterProcess.class
+com/ecollado/samples/mapred/samples/ProcessUnits.class
+com/ecollado/samples/mapred/KmerCounterProcess$KmerMapper.class
+com/ecollado/samples/mapred/SkipLinesRecordReader.class
+com/ecollado/samples/mapred/KmerCounterProcess$KmerReducer.class
+com/ecollado/samples/mapred/SkipLinesInputFormat.class
+com/ecollado/samples/mapred/samples/ProcessUnits$E_EMapper.class
+com/ecollado/samples/mapred/samples/WordCount.class
+com/ecollado/samples/mapred/samples/WordCount$TokenizerMapper.class
+com/ecollado/samples/mapred/samples/WordCount2.class
+com/ecollado/samples/mapred/samples/WordCount2$IntSumReducer.class

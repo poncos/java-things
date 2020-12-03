@@ -1,6 +1,8 @@
 package com.ecollado.samples.vertx.test;
 
-import com.ecollado.samples.vertx.service.model.ImeiInfo;
+import com.ecollado.samples.vertx.eir.model.ImeiInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,6 +13,7 @@ import java.util.Random;
 
 class EirSimTask extends Thread {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(EirSimTask.class);
 
     private EirSimProtocol protocol;
 
@@ -34,16 +37,19 @@ class EirSimTask extends Thread {
 
             String input;
             while ((input = in.readLine()) != null) {
+                LOGGER.debug("Received: [{}]",input);
                 ImeiInfo imeiInfo = this.protocol.processInput(input);
 
-                Thread.sleep( random.nextInt(1000) );
+                try {
+                    Thread.sleep(random.nextInt(1000));
+                } catch(InterruptedException iex) {}
+
                 out.writeObject(imeiInfo);
+                LOGGER.debug("Sent: [{}]",imeiInfo);
 
             }
         } catch (IOException ioexception) {
-
-        } catch (InterruptedException e) {
-
+            LOGGER.error("i/0 error",ioexception);
         }
     }
 }

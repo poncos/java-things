@@ -1,4 +1,4 @@
-package com.ecollado.samples.vertx.eir.service;
+package com.ecollado.samples.vertx.eir.service.eirprocess;
 
 import com.ecollado.samples.vertx.eir.config.DatabaseConfig;
 import com.ecollado.samples.vertx.eir.config.IdentityCheckConfig;

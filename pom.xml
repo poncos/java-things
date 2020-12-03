@@ -8,6 +8,11 @@
     <artifactId>java-things</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <jackson.version>2.10.0</jackson.version>
+    </properties>
+
     <modules>
         <module>openapi-sample</module>
         <module>jerseyrestsample</module>
@@ -16,6 +21,10 @@
         <module>springrabbitmqsample</module>
         <module>soapsample</module>
         <module>vertx-sample</module>
+        <module>graphdb-sample</module>
+        <module>graphql-sample</module>
+        <module>kafka-sample</module>
+        <module>mapred</module>
     </modules>
 
     <dependencies>

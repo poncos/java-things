@@ -21,6 +21,9 @@ public class IdentityCheckResponse {
     @JsonProperty
     private IdentityCheckStatusCode equipmentStatus;
 
+    @JsonProperty
+    private String error;
+
     public static IdentityCheckResponse fromBytes(final byte[] data) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         IdentityCheckResponse identityCheckRequest = mapper.readValue(data, IdentityCheckResponse.class);
@@ -31,5 +34,29 @@ public class IdentityCheckResponse {
     public String toJsonStr() throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.writeValueAsString(this);
+    }
+
+    public IdentityCheckResultCode getResultCode() {
+        return resultCode;
+    }
+
+    public void setResultCode(IdentityCheckResultCode resultCode) {
+        this.resultCode = resultCode;
+    }
+
+    public IdentityCheckStatusCode getEquipmentStatus() {
+        return equipmentStatus;
+    }
+
+    public void setEquipmentStatus(IdentityCheckStatusCode equipmentStatus) {
+        this.equipmentStatus = equipmentStatus;
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
     }
 }

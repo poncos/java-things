@@ -1,4 +1,4 @@
-package com.ecollado.samples.vertx.eir.service;
+package com.ecollado.samples.vertx.eir.service.http;
 
 import com.ecollado.samples.vertx.eir.exception.ValidationException;
 import com.ecollado.samples.vertx.eir.model.IdentityCheckRequest;
@@ -92,7 +92,7 @@ public class DefaultHttpRequestHandler implements Handler<HttpServerRequest> {
             if (reply.succeeded()) {
                 request.response()
                         .putHeader("content-type", "application/json")
-                        .end("{ \"result\": \""+ reply.result().body() + "\"}");
+                        .end(reply.result().body().toString());
             } else {
                 request.response()
                         .setStatusCode(500)

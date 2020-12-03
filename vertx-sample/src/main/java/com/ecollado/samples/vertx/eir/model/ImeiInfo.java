@@ -1,4 +1,4 @@
-package com.ecollado.samples.vertx.jobrunner.model;
+package com.ecollado.samples.vertx.eir.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;

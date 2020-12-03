@@ -1,4 +1,4 @@
-package com.ecollado.samples.vertx.eir.service;
+package com.ecollado.samples.vertx.eir.service.eirprocess;
 
 import com.ecollado.samples.vertx.eir.model.IdentityCheckRequest;
 import com.ecollado.samples.vertx.eir.model.IdentityCheckResponse;

@@ -1,8 +1,18 @@
-
-
-database.pg.port=5432
-database.pg.hsot=localhost
-database.pg.dbname=eir
-database.pg.user=testuser
-database.pg.pwd=testpwd
-database.pg.max-pool-size=4
+{
+  "database": {
+    "eir": {
+      "dbname": "eirdb",
+      "port": 5432,
+      "host": "localhost",
+      "user": "testuser",
+      "pwd": "secret",
+      "max-pool-size": 5
+    }
+  },
+  "http-server": {
+    "eir": {
+      "port": 8899,
+      "bind": "0.0.0.0"
+    }
+  }
+}

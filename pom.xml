@@ -15,16 +15,16 @@
 
     <modules>
         <module>openapi-sample</module>
-        <module>jerseyrestsample</module>
-        <module>rabbitmqsample</module>
+        <module>jerseyrest-sample</module>
+        <module>rabbitmq-sample</module>
         <module>cassandrasample</module>
-        <module>springrabbitmqsample</module>
-        <module>soapsample</module>
+        <module>springrabbitmq-sample</module>
+        <module>soap-sample</module>
         <module>vertx-sample</module>
         <module>graphdb-sample</module>
         <module>graphql-sample</module>
-        <module>kafka-sample</module>
-        <module>mapred</module>
+        <module>mapred-sample</module>
+        <module>java-keystore</module>
     </modules>
 
     <dependencies>

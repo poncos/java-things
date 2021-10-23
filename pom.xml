@@ -17,18 +17,28 @@
         <module>openapi-sample</module>
         <module>jerseyrest-sample</module>
         <module>rabbitmq-sample</module>
-        <module>cassandrasample</module>
-        <module>springrabbitmq-sample</module>
-        <module>soap-sample</module>
         <module>vertx-sample</module>
         <module>graphdb-sample</module>
-        <module>graphql-sample</module>
         <module>mapred-sample</module>
-        <module>java-keystore</module>
+        <module>springrest-sample</module>
     </modules>
 
     <dependencies>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

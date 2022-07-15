@@ -12,7 +12,7 @@
     <artifactId>vertx-sample</artifactId>
 
     <properties>
-        <jackson.version>2.4.4</jackson.version>
+        <jackson.version>2.12.6.1</jackson.version>
         <vertx.version>3.9.4</vertx.version>
     </properties>
 

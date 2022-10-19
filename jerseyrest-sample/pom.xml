@@ -12,7 +12,7 @@
     <artifactId>jersey-rest-sample</artifactId>
 
     <properties>
-        <jackson.version>2.4.4</jackson.version>
+        <jackson.version>2.13.4.1</jackson.version>
         <com.sun.jersey-version>1.19.4</com.sun.jersey-version>
     </properties>
 

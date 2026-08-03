@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -25,10 +26,15 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity
 public class SecurityConfiguration {
+    
+    private static final Logger log = LoggerFactory.getLogger(SecurityConfiguration.class);
 
     @Value("${spring.security.oauth2.resourceserver.jwt.jwk-set-uri}")
     private String jwkSetUri;
@@ -65,6 +71,15 @@ public class SecurityConfiguration {
                     }
                     if (claims.containsKey("nbf") && claims.get("nbf") instanceof Date) {
                         claims.put("nbf", ((Date) claims.get("nbf")).toInstant());
+                    }
+                    
+                    // Log token scopes and other claims
+                    log.debug("JWT Claims: {}", claims);
+                    Object scopes = claims.get("scope");
+                    if (scopes != null) {
+                        log.info(">>>> Token Scopes: {}", scopes);
+                    } else {
+                        log.info(">>>> No Scopes encoded within the Token.");
                     }
                     
                     return Jwt.withTokenValue(token)

@@ -1,0 +1,20 @@
+
+logging:
+  level:
+    org.springframework.data.neo4j: DEBUG
+
+server:
+  port: 3000
+
+spring:
+  application:
+    name: neo4j-sample
+
+  data:
+    neo4j:
+      database: neo4j
+  neo4j:
+    uri: bolt://localhost:7687
+    authentication:
+      username: neo4j
+      password: secret

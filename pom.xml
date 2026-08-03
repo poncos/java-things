@@ -21,6 +21,7 @@
         <module>graphdb-sample</module>
         <module>mapred-sample</module>
         <module>springrest-sample</module>
+        <module>oauth-rest-sample</module>
     </modules>
 
     <dependencies>
@@ -34,8 +35,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <source>8</source>
-                    <target>8</target>
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
             </plugin>
         </plugins>

@@ -25,10 +25,14 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration {
+    
+    private static final Logger log = LoggerFactory.getLogger(SecurityConfiguration.class);
 
     @Value("${spring.security.oauth2.resourceserver.jwt.jwk-set-uri}")
     private String jwkSetUri;
@@ -65,6 +69,15 @@ public class SecurityConfiguration {
                     }
                     if (claims.containsKey("nbf") && claims.get("nbf") instanceof Date) {
                         claims.put("nbf", ((Date) claims.get("nbf")).toInstant());
+                    }
+                    
+                    // Log token scopes and other claims
+                    log.debug("JWT Claims: {}", claims);
+                    Object scopes = claims.get("scope");
+                    if (scopes != null) {
+                        log.info(">>>> Token Scopes: {}", scopes);
+                    } else {
+                        log.info(">>>> No Scopes encoded within the Token.");
                     }
                     
                     return Jwt.withTokenValue(token)

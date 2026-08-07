@@ -1,3 +1,10 @@
+logging:
+  level:
+    root: INFO
+    org.springframework.security: TRACE
+    org.springframework.security.oauth2: TRACE
+    org.springframework.security.oauth2.jwt: TRACE
+    com.nimbusds: TRACE
 
 spring:
   application:
@@ -9,6 +16,7 @@ spring:
           issuer-uri: https://gqt2q2.logto.app/oidc
           jwk-set-uri: https://gqt2q2.logto.app/oidc/jwks
           audiences: https://springrest-sample-api
+          algorithm: ES384
 
 jwt:
   signature-verification:
